@@ -1,0 +1,29 @@
+{
+  "name": "frontendchallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronAS2016/FrontEndChallenge.git"
+  },
+  "keywords": [
+    "nextjs",
+    "html",
+    "css"
+  ],
+  "author": "Aaron Saban",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AaronAS2016/FrontEndChallenge/issues"
+  },
+  "homepage": "https://github.com/AaronAS2016/FrontEndChallenge#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
