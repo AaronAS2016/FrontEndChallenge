@@ -1,4 +1,5 @@
 import {device as sizeScreen} from '../breakpoints'
+import PropTypes from 'prop-types'
 
 export default class InfoBox extends React.Component{
 
@@ -42,7 +43,7 @@ export default class InfoBox extends React.Component{
 
                             @media ${sizeScreen.desktop} {
                                 .box-container .box-content{
-                                    width:60%;
+                                    width:50%;
                                     max-width:800px;
                                 }
                             }
@@ -54,3 +55,8 @@ export default class InfoBox extends React.Component{
         )
     }
 }
+
+InfoBox.propTypes = {
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired
+};

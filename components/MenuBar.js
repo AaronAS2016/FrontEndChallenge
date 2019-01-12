@@ -5,49 +5,52 @@ export default class MenuBar extends React.Component{
     render(){
         return(
             <div className="buttonsContainer">
-                    <Link route="/search" prefetch>
                         <div className="button">
                             <div className="button-info">
                                 <p>File finder</p>
                                 <span className="info-title">Search</span>
                                 <span className="info-desc">Search files stored on your device</span>
                             </div>
-                            <div className="button-action">
-                                <span><i className="fas fa-search"></i></span>
-                                <p>Search</p>
-                            </div>
+                            <Link route="/search">
+                                <div className="button-action">
+                                    <span><i className="fas fa-search"></i></span>
+                                    <p>Search</p>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
 
-                    <Link route="/dashboard" prefetch>
+
+
                         <div className="button">
                             <div className="button-info">
-                                <p>User Stats</p>
-                                <span className="info-title">Dashboard</span>
+                                <p>Dashboard</p>
+                                <span className="info-title">User stats</span>
                                 <span className="info-desc">Username</span>
                             </div>
+                            <Link route="/dashboard" prefetch>
+                                <div className="button-action">
+                                    <span><i className="fas fa-home"></i></span>
+                                    <p>Dashboard</p>
+                                </div>
+                            </Link>
 
-                            <div className="button-action">
-                                <span><i className="fas fa-home"></i></span>
-                                <p>Dashboard</p>
-                            </div>
                         </div>
-                    </Link>
 
-                    <Link route="/devices" prefetch>
+
                         <div className="button">
                             <div className="button-info">
                                 <p>Connected devices</p>
                                 <span className="info-title">Devices Connected: 3</span>
                                 <span className="info-desc">Chek info of all your phones connected to DeviApp</span>
                             </div>
-
-                            <div className="button-action">
-                                <span><i className="fas fa-mobile-alt"></i></span>
-                                <p>Devices</p>
-                            </div>
+                            <Link route="/devices" prefetch>
+                                <div className="button-action">
+                                    <span><i className="fas fa-mobile-alt"></i></span>
+                                    <p>Devices</p>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+
 
 
 

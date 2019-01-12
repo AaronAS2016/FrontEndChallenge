@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Link } from '../routes'
 import NProgress from 'nprogress'
 import Router from 'next/router'
+import PropTypes from 'prop-types';
 
 Router.onRouteChangeStart = (url) => {
     NProgress.start()
@@ -20,15 +21,16 @@ export default class Layout extends React.Component {
                     <meta name="viewport" content="width=device-width, user-scalable=no"/>
                     <title>{title}</title>
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></link>
+                    <link rel="icon" href="../static/logo.png"></link>
                 </Head>
-                <header><Link route="/"><a>{title}</a></Link></header>
+                <header className="header"><Link route="/"><a>{title}</a></Link></header>
                 <section className="main">
                     { children }
                 </section>
                 <style jsx>
                 {
                     `
-                        header{
+                        .header{
                             font-size:3em;
                             padding:20px;
                             text-align:center;
@@ -63,7 +65,7 @@ export default class Layout extends React.Component {
                             pointer-events: none;
                         }
                         #nprogress .bar {
-                            background: #29d;
+                            background: #cb3737;
                             position: fixed;
                             z-index: 1031;
                             top: 0;
@@ -78,7 +80,7 @@ export default class Layout extends React.Component {
                             right: 0px;
                             width: 100px;
                             height: 100%;
-                            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+                            box-shadow: 0 0 10px #cb3737, 0 0 5px #cb3737;
                             opacity: 1.0;
                             -webkit-transform: rotate(3deg) translate(0px, -4px);
                                 -ms-transform: rotate(3deg) translate(0px, -4px);
@@ -97,8 +99,8 @@ export default class Layout extends React.Component {
                             height: 18px;
                             box-sizing: border-box;
                             border: solid 2px transparent;
-                            border-top-color: #29d;
-                            border-left-color: #29d;
+                            border-top-color: #cb3737;
+                            border-left-color: #cb3737;
                             border-radius: 50%;
                             -webkit-animation: nprogress-spinner 400ms linear infinite;
                                     animation: nprogress-spinner 400ms linear infinite;
@@ -131,3 +133,8 @@ export default class Layout extends React.Component {
         )
     }
 }
+
+
+Layout.propTypes = {
+    title: PropTypes.string.isRequired
+};

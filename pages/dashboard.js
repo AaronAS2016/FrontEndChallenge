@@ -2,6 +2,27 @@ import Layout from '../components/Layout';
 import MenuBar from '../components/MenuBar';
 import InfoBox from '../components/InfoBox';
 import Error from 'next/error'
+import MenuToolbar from '../components/MenuToolbar';
+
+const items = [
+    {
+        action: '',
+        iconClass: 'plus',
+        title: 'Add device'
+
+    },
+    {
+        action: '',
+        iconClass: 'trash-alt',
+        title: 'Remove device'
+    },
+    {
+        action: '',
+        iconClass: 'cog',
+        title: 'Profile settings'
+    }
+
+]
 
 export default class Dashboard extends React.Component{
 
@@ -22,7 +43,12 @@ export default class Dashboard extends React.Component{
         }
     }
 
+
+
+
+
     render(){
+
         const { title, body, statusCode} = this.props;
         if(statusCode !== 200){
             return <Error statusCode={statusCode}/>
@@ -30,6 +56,7 @@ export default class Dashboard extends React.Component{
         return(
             <Layout title="Dashboard">
                 <MenuBar/>
+                <MenuToolbar toolbar={items} />
                 <InfoBox title={title} body={body}/>
             </Layout>
         )
