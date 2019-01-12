@@ -23,10 +23,11 @@ export default class Layout extends React.Component {
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></link>
                     <link rel="icon" href="../static/logo.png"></link>
                 </Head>
+
                 <header className="header"><Link route="/"><a>{title}</a></Link></header>
-                <section className="main">
+                <main className="main">
                     { children }
-                </section>
+                </main>
                 <style jsx>
                 {
                     `

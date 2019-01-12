@@ -11,6 +11,11 @@ export default class Search extends React.Component{
 
             let {title, body} = await req.json()
 
+            if(req.status >= 400){
+                res.status = req.status;
+                return {title:null, body:null, statusCode : req.status};
+            }
+
             return {
                 title,
                 body,

@@ -11,13 +11,18 @@ export default class Devices extends React.Component{
 
             let {title, body} = await req.json()
 
+            if(req.status >= 400){
+                res.statusCode  = req.status;
+                return {title:null, body:null, statusCode : req.status};
+            }
+
             return {
                 title,
                 body,
                 statusCode : 200
             };
         }catch(e){
-            res.statusCode = 503;
+            res.status = 503;
             return {title:null, body:null, statusCode : 503};
         }
     }
