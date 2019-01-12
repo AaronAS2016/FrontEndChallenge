@@ -2,17 +2,17 @@
 
 ## ¿Cómo lo interprete?
 
-Pensé el reto como una app 'DeviApp' para administrar conexiones a dispositivos móviles, esa fue la interpretación que le di al video de prueba y creo que podría ser un caso de una app Real
+Pensé el reto como una app 'DeviApp' para administrar conexiones a dispositivos móviles y hacer búsquedas de archivos en ellos, esa fue la interpretación que le di al video de prueba y creo que podría ser un caso de una app Real
 
 ## ¿Como pensé la implementación y que tecnologías usé?
-Para desarrollarlo utilice React utilizando el framework de Next.js, me tome la libertad de usar esta librería, por terminos de performance, tiene ventajas al utilizar Server Side Rendering y genera una App que permite ser escalable y fácil de mantener.
+Para desarrollarlo utilice React utilizando el framework de Next.js, me tome la libertad de usar esta librería, por términos de performance, tiene ventajas en velocidad al renderizar y ejecutar request al utilizar Server Side Rendering y genera una App que permite ser escalable y fácil de mantener.
 
 ## ¿Que decisiones tome?
-Algunas de las ideas que decidí implementar, fue utilizar Next-Routes, en términos de la funcionlidad de la App en este estado no tiene mucha ventaja utilizarlo, pero en caso de querer que la aplicación funcione, sería una buena opción. 
+Algunas de las ideas que decidí implementar, fue utilizar Next-Routes, en términos de la funcionalidad de la App en este estado no tiene mucha ventaja utilizarlo, pero en caso de querer que la aplicación agregue funcionalidades, sería una buena opción. 
 
 Otra decisión que tome fue utilizar Prefetch en los enlaces de navegación, este le indica a Next que el Link es importante y que vaya precargando el contenido por adelantado y así se ahorra un poco de tiempo de carga.
 
-## ¿Como inicializar la app?
+## ¿Como inicializar la aplicación?
 
 Para inicializar la App se requiere tener instalado una versión de Node
 
