@@ -77,10 +77,10 @@ export default class Dashboard extends React.Component{
                 <style jsx global>
                     {
                         `
-                        .buttonsContainer .button:nth-child(1){
-                            position: relative;
-                            top:150px;
-                            left:20px;
+                            .buttonsContainer .button:nth-child(1){
+                                position: relative;
+                                top:150px;
+                                left:20px;
                             }
 
                             .buttonsContainer .button:nth-child(3){
