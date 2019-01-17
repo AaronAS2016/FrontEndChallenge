@@ -4,6 +4,7 @@ import { Link } from '../routes'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import PropTypes from 'prop-types';
+import {device as sizeScreen} from '../breakpoints'
 
 Router.onRouteChangeStart = (url) => {
     NProgress.start()
@@ -32,21 +33,32 @@ export default class Layout extends React.Component {
                 {
                     `
                         .header{
-                            font-size:3em;
+                            font-size:2em;
                             padding:20px;
                             text-align:center;
+                            user-select:none;
+                            margin: 0 40px;
                             text-transform:uppercase;
-                            border-bottom: 1px solid #ccc;
+                            border-bottom: 1px solid #E8E9EA;
                         }
 
                         header a{
                             text-decoration: none;
-                            color:#2b2b28;
+                            color:#fff;
+                            font-weight: 500;
                         }
                         .main{
                             padding:20px;
                             margin:20px;
                         }
+
+                        @media ${sizeScreen.tablet} {
+                            .header{
+                                font-size:3em;
+                            }
+                        }
+
+                        
                     `
                 }
 
@@ -58,7 +70,7 @@ export default class Layout extends React.Component {
                        body{
                            font-family: system-ui;
                            margin:0;
-                           background: #fafafa;
+                           background: #009BDD;
                        }
 
                         /* Make clicks pass-through */
@@ -123,7 +135,9 @@ export default class Layout extends React.Component {
                             100% { transform: rotate(360deg); }
                         }
 
-
+                        img{
+                            user-select:none;
+                        }
 
                     `
 

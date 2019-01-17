@@ -1,4 +1,4 @@
-import {device as sizeScreen} from '../breakpoints'
+
 import Link from 'next/link'
 import PropTypes from 'prop-types';
 
@@ -9,10 +9,9 @@ export default class MenuToolbar extends React.Component{
             <section className="toolbar-container">
                 <section className="toolbar-items">
                     { toolbar.map((item) =>(
-                                <Link href={`/${item.action}`} key={item.iconClass}>
+                                <Link href={`/${item.action}`} key={item.key}>
                                     <a className="toolbar-item"> 
-                                        <span><i className={`fas fa-${item.iconClass}`}></i></span>
-                                        <p>{item.title}</p>
+                                        <img src={item.src}></img>
                                     </a>
                                 </Link>
                         ))
@@ -22,7 +21,6 @@ export default class MenuToolbar extends React.Component{
                     {
                         `
                             .toolbar-container{
-                                margin:20px 0;
                                 display:flex;
                                 width:100%;
                                 justify-content:center;
@@ -30,73 +28,56 @@ export default class MenuToolbar extends React.Component{
 
                             .toolbar-container .toolbar-items{
                                 display:flex;
-                                width:80%;
-                                padding:30px;
-                                border-radius: 10px;
-                                background: #ee6f57;
                                 justify-content:space-between;
                                 flex-wrap: wrap;
+                                position:relative;
+                                left:70px;
+                                top:25px;
+                                cursor:pointer;
                             }
 
-                            .toolbar-container .toolbar-items .toolbar-item{
-                                color:#cb3737;
-                                display:flex;
-                                justify-content:center;
-                                align-items:center;
-                                flex-direction:column;
-                                text-decoration: none;
+                            .toolbar-container .toolbar-items .toolbar-item img{
+                                width:35px;
+                                transform:scale(0);
+                                animation:scaleIn .5s forwards;
                             }
 
-                            .toolbar-container .toolbar-items .toolbar-item:hover span{
-                                background:#ee6f57;
-                                border: 1px solid #fafafa;
-                                color: #fafafa;
+                            .toolbar-container .toolbar-items .toolbar-item:nth-child(1) {
+                                position:relative;
+                                top:50px;
+                                transform:rotate(-45deg);
+                            }
+                            
+                            .toolbar-container .toolbar-items .toolbar-item:nth-child(2) {
+                                position:relative;
+                                top:25px;
+                                right:2px;
+                                transform:rotate(-40deg);
                             }
 
-                            .toolbar-container .toolbar-items .toolbar-item span{
-                                padding:5px;
-                                width:25px;
-                                height:25px;
-                                color:#cb3737;
-                                display:flex;
-                                box-sizing: border-box;
-                                justify-content:center;
-                                align-items:center;
-                                transition: all .3s ease-in;
-                                border-radius:50%;
-                                background: #fafafa;
+                            .toolbar-container .toolbar-items .toolbar-item:nth-child(3) {
+                                position:relative;
+                                top:10px;
+                                right:0;
+                                
                             }
 
-                            .toolbar-container .toolbar-items .toolbar-item p{
-                                font-size: .5em;
-                                color:#fafafa;
-                                font-weight:500;
+                            .toolbar-container .toolbar-items .toolbar-item:nth-child(4) {
+                                position:relative;
+                                top:10px;
+                                left:5px;
+                                transform:rotate(15deg);
                             }
 
-                            @media ${sizeScreen.tablet} {
-                                .toolbar-container .toolbar-items{
-                                    width:70%;
-                                    justify-content:center;
+                            @keyframes scaleIn{
+                                0%{
+                                    transform:scale(0);
                                 }
-                                .toolbar-container .toolbar-items .toolbar-item{
-                                    margin: 0 10px;
-                                }
-
-                                .toolbar-container .toolbar-items .toolbar-item span{
-                                    width:50px;
-                                    height:50px;
-                                }
-                                .toolbar-container .toolbar-items .toolbar-item p{
-                                    font-size: 1em;
+                                100%{
+                                    transform:scale(1);
                                 }
                             }
-
-                            @media ${sizeScreen.desktop} {
-                                .toolbar-container .toolbar-items{
-                                    width:60%;
-                                    max-width:800px;
-                                }
-                            }
+                            
 
                         `
                     }
@@ -109,8 +90,8 @@ export default class MenuToolbar extends React.Component{
 
 MenuToolbar.propTypes  = {
     toolbar: PropTypes.arrayOf(PropTypes.shape({
-        iconClass: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+        key: PropTypes.string.isRequired,
         action: PropTypes.string
     }))
 }
